@@ -28,3 +28,32 @@ span {
   background: #403939;
   @apply grid md:grid-cols-11 sm:grid-cols-3 justify-items-center;
 }
+
+.navigator {
+  height: 50px;
+  width: 50px;
+  background-color: #50c878;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 3px 2px #574D4D;
+  transition : .5s;
+  border: 0 solid #50c878;
+}
+
+.navigator-item {
+  height: 25px;
+  width: 25px;
+  background-color: #50c878;
+  border-radius: 50%;
+  display: inline-block;
+  /*box-shadow: 0 3px 2px #574D4D;*/
+  position : relative;
+  top : 12px;
+  transition : all .3s linear;
+  border: 0 solid #50c878;
+}
+
+.navigator:hover {
+  box-shadow: 0 10px 15px #574D4D;
+  /*border: .5px solid #EE5180;*/
+}
