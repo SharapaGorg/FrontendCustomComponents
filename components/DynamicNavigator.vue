@@ -68,7 +68,7 @@ export default {
 
           navigatorItem.style.left = parentProps.x + 15 + 'px';
           navigatorItem.style.top = parentProps.y + 15 + 'px';
-          this.$refs.navigator.appendChild(navigatorItem);
+          this.$refs.container.appendChild(navigatorItem);
           this.activeItems.push(navigatorItem)
         }
 

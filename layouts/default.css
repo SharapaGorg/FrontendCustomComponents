@@ -38,6 +38,8 @@ span {
   box-shadow: 0 3px 2px #574D4D;
   transition : .5s;
   border: 0 solid #50c878;
+  z-index : 100;
+  position : absolute;
 }
 
 .navigator-item {
@@ -46,7 +48,7 @@ span {
   background-color: #50c878;
   border-radius: 50%;
   display: inline-block;
-  /*box-shadow: 0 3px 2px #574D4D;*/
+  box-shadow: 0 3px 2px #574D4D;
   position : absolute;
   transition : all .3s linear;
   /*border: 5px solid #574D4D;*/
