@@ -9,10 +9,10 @@ export default {
   name: "DynamicNavigator",
   data() {
     return {
-      activateItems: false,
+      activated: false,
       itemsWidthHeight: 15,
       activeItems: [],
-      isUsed : false,
+      isUsed: false,
       navigatorItems: [
         {
           name: 'Profile',
@@ -21,55 +21,72 @@ export default {
         {
           name: 'Home',
           path: '/'
+        },
+        {
+          name : 'Services',
+          path : '/services'
+        },
+        {
+          name : 'Auth',
+          path : '/auth'
         }
       ]
     }
   },
   methods: {
     moveItems() {
-      // event.stopPropagation() // doesn`t work
-      // event.stopImmediatePropagation() // the same case
-      let indent;
-      let navigator = this.$refs.navigator
       for (let i = 0; i < this.navigatorItems.length; i++) {
-        let navigatorItem = document.createElement('div');
-        navigatorItem.className = 'navigator-item';
-
-        if (this.isUsed) {
-          navigatorItem = this.activeItems[i]
-          // console.log(this.activeItems)
-        } else {
-          navigator.appendChild(navigatorItem)
-        }
-
-        // let navigatorProps = navigator.getBoundingClientRect()
-
+        let indentX, indentY;
         switch (i) {
           case 0:
-            indent = !this.activateItems ? 50 : 0;
+            indentX = 50;
+            indentY = 0;
             break
           case 1:
-            indent = !this.activateItems ? -50 : 0;
+            indentX = -50;
+            indentY = 0;
+            break
+          case 2:
+            indentX = 0;
+            indentY = 50;
+            break
+          case 3:
+            indentX = 0;
+            indentY = -50;
             break
           default:
-            console.error('IndexError')
             break
         }
 
-        // navigatorItem.style.transition = 'all .3s linear';
+        let navigatorItem;
+        if (this.isUsed) {
+          navigatorItem = this.activeItems[i];
+        } else {
+          navigatorItem = document.createElement('div');
+          navigatorItem.className = 'navigator-item';
+          let parentProps = this.$refs.navigator.getBoundingClientRect();
 
-        navigatorItem.style.transform = `translate(${indent}px, 0px)`;
+          navigatorItem.style.left = parentProps.x + 15 + 'px';
+          navigatorItem.style.top = parentProps.y + 15 + 'px';
+          this.$refs.navigator.appendChild(navigatorItem);
+          this.activeItems.push(navigatorItem)
+        }
 
-        navigatorItem.style.left = indent + 'px'
-        this.activeItems.push(navigatorItem)
+        if (this.activated) {
+          navigatorItem.style.transform = `translate(0px, 0px)`
+        }
+        else {
+          navigatorItem.style.transform = `translate(${indentX}px, ${indentY}px)`
+        }
+
       }
-      this.isUsed = true;
-      this.activateItems = !this.activateItems
+      this.activated = !this.activated
+      this.isUsed = true
     }
   },
   mounted() {
     this.$refs.navigator.onclick = () => {
-        this.moveItems()
+      this.moveItems()
     }
   }
 }
