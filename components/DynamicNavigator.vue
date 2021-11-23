@@ -1,5 +1,5 @@
 <template>
-  <div ref='container'>
+  <div ref='container' class='container'>
     <div class='navigator' ref='navigator'></div>
   </div>
 </template>
@@ -23,13 +23,17 @@ export default {
           path: '/'
         },
         {
-          name : 'Services',
-          path : '/services'
+          name: 'Services',
+          path: '/services'
         },
         {
-          name : 'Auth',
-          path : '/auth'
-        }
+          name: 'Auth',
+          path: '/auth'
+        },
+        {},
+        {},
+        {},
+        {}
       ]
     }
   },
@@ -39,20 +43,36 @@ export default {
         let indentX, indentY;
         switch (i) {
           case 0:
-            indentX = 50;
+            indentX = 40;
             indentY = 0;
             break
           case 1:
-            indentX = -50;
+            indentX = -40;
             indentY = 0;
             break
           case 2:
             indentX = 0;
-            indentY = 50;
+            indentY = 40;
             break
           case 3:
             indentX = 0;
-            indentY = -50;
+            indentY = -40;
+            break
+          case 4:
+            indentX = 28;
+            indentY = 28;
+            break
+          case 5:
+            indentX = -28;
+            indentY = -28
+            break
+          case 6:
+            indentX = 28;
+            indentY = -28;
+            break
+          case 7:
+            indentX = -28;
+            indentY = 28;
             break
           default:
             break
@@ -74,8 +94,7 @@ export default {
 
         if (this.activated) {
           navigatorItem.style.transform = `translate(0px, 0px)`
-        }
-        else {
+        } else {
           navigatorItem.style.transform = `translate(${indentX}px, ${indentY}px)`
         }
 
