@@ -12,7 +12,6 @@ export default {
       activated: false,
       itemsWidthHeight: 15,
       activeItems: [],
-      isUsed: false,
       navigatorItems: [
         {
           name: 'Profile',
@@ -35,6 +34,25 @@ export default {
         {},
         {}
       ]
+    }
+  },
+  mounted() {
+    for (let elem of this.navigatorItems) {
+      let navigatorItem = document.createElement('div')
+      navigatorItem.className = 'navigator-item'
+      let parentProps = this.$refs.navigator.getBoundingClientRect();
+
+      navigatorItem.style.left = parentProps.x + 15 + 'px';
+      navigatorItem.style.top = parentProps.y + 15 + 'px';
+
+      navigatorItem.title = elem.name
+
+      this.$refs.container.appendChild(navigatorItem);
+      this.activeItems.push(navigatorItem)
+    }
+
+    this.$refs.navigator.onclick = () => {
+      this.moveItems()
     }
   },
   methods: {
@@ -79,35 +97,21 @@ export default {
         }
 
         let navigatorItem;
-        if (this.isUsed) {
-          navigatorItem = this.activeItems[i];
-        } else {
-          navigatorItem = document.createElement('div');
-          navigatorItem.className = 'navigator-item';
-          let parentProps = this.$refs.navigator.getBoundingClientRect();
+        navigatorItem = this.activeItems[i];
 
-          navigatorItem.style.left = parentProps.x + 15 + 'px';
-          navigatorItem.style.top = parentProps.y + 15 + 'px';
-          this.$refs.container.appendChild(navigatorItem);
-          this.activeItems.push(navigatorItem)
-        }
+        let parentProps = this.$refs.navigator.getBoundingClientRect()
+        navigatorItem.style.left = parentProps.x + 15 + 'px';
+        navigatorItem.style.top = parentProps.y + 15 + 'px';
 
         if (this.activated) {
           navigatorItem.style.transform = `translate(0px, 0px)`
         } else {
           navigatorItem.style.transform = `translate(${indentX}px, ${indentY}px)`
         }
-
       }
       this.activated = !this.activated
-      this.isUsed = true
     }
   },
-  mounted() {
-    this.$refs.navigator.onclick = () => {
-      this.moveItems()
-    }
-  }
 }
 </script>
 

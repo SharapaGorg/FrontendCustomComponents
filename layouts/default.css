@@ -36,8 +36,8 @@ span {
   border-radius: 50%;
   display: inline-block;
   /*box-shadow: 0 3px 2px #574D4D;*/
-  transition : .5s;
-  border: 0 solid #50c878;
+  transition : all .3s linear;
+  /*border: 0 solid #50c878;*/
   z-index : 100;
   position : absolute;
 }
@@ -56,5 +56,6 @@ span {
 
 .navigator:hover {
   box-shadow: 0 10px 15px #574D4D;
+  transition : all .3s linear;
   /*border: .5px solid #EE5180;*/
 }

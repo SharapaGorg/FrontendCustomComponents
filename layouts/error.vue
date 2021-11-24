@@ -10,7 +10,7 @@
 export default {
   name: "error",
   props: ['error'],
-  layout : 'NotFound404'
+  // layout : 'NotFound404'
 }
 </script>
 
