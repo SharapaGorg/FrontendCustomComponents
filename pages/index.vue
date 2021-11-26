@@ -2,7 +2,7 @@
   <center>
     <br><br>
     <div>
-      <DynamicNavigator/>
+        <DynamicNavigator/>
     </div>
   </center>
 </template>

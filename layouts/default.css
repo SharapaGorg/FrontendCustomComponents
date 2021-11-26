@@ -34,9 +34,9 @@ span {
   width: 55px;
   background-color: #50c878;
   border-radius: 50%;
-  display: inline-block;
+  /*display: inline-block;*/
   /*box-shadow: 0 3px 2px #574D4D;*/
-  transition : all .3s linear;
+  /*transition : all .3s linear;*/
   /*border: 0 solid #50c878;*/
   z-index : 100;
   position : absolute;
@@ -51,11 +51,33 @@ span {
   box-shadow: 0 3px 2px #574D4D;
   position : absolute;
   transition : all .3s linear;
+  z-index : -1;
   /*border: 5px solid #574D4D;*/
 }
 
-.navigator:hover {
-  box-shadow: 0 10px 15px #574D4D;
-  transition : all .3s linear;
-  /*border: .5px solid #EE5180;*/
+.navigator-item:hover {
+  cursor: pointer;
+}
+
+/*.navigator:hover {*/
+/*  box-shadow: 0 10px 15px #574D4D;*/
+/*  transition : all .3s linear;*/
+/*  !*border: .5px solid #EE5180;*!*/
+/*}*/
+
+.container {
+  width : 55px;
+  height : 55px;
+}
+
+.draggable {
+  width: 30px;
+  height : 30px;
+  margin: 1rem 0 0 1rem;
+  background-color: #29e;
+  color: white;
+  border-radius: 0.75em;
+  padding: 4%;
+  touch-action: none;
+  user-select: none;
 }

@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import interact from 'interactjs'
+
 export default {
   name: "DynamicNavigator",
   data() {
@@ -15,7 +17,7 @@ export default {
       navigatorItems: [
         {
           name: 'Profile',
-          path: '/profile'
+          path: '/'
         },
         {
           name: 'Home',
@@ -23,20 +25,56 @@ export default {
         },
         {
           name: 'Services',
-          path: '/services'
+          path: '/'
         },
         {
           name: 'Auth',
-          path: '/auth'
+          path: '/'
         },
-        {},
-        {},
-        {},
-        {}
+        {
+          name: 'Route1',
+          path: '/'
+        },
+        {
+          name: 'Route2',
+          path: '/'
+        },
+        {
+          name: 'Route3',
+          path: '/'
+        },
+        {
+          name: 'Test',
+          path: '/test'
+        }
       ]
     }
   },
   mounted() {
+
+    const position = { x: 0, y: 0 }
+
+    interact(this.$refs.navigator).draggable({
+      modifiers: [
+        interact.modifiers.restrict({
+          restriction: 'self',
+          endOnly: true
+        })
+      ],
+      listeners: {
+        // start (event) {
+        //   console.log(event.type, event.target)
+        // },
+        move (event) {
+          position.x += event.dx
+          position.y += event.dy
+
+          event.target.style.transform =
+            `translate(${position.x}px, ${position.y}px)`
+        },
+      }
+    })
+
     for (let elem of this.navigatorItems) {
       let navigatorItem = document.createElement('div')
       navigatorItem.className = 'navigator-item'
@@ -49,6 +87,10 @@ export default {
 
       this.$refs.container.appendChild(navigatorItem);
       this.activeItems.push(navigatorItem)
+
+      navigatorItem.onclick = () => {
+        this.$router.push(elem.path)
+      }
     }
 
     this.$refs.navigator.onclick = () => {
@@ -98,6 +140,7 @@ export default {
 
         let navigatorItem;
         navigatorItem = this.activeItems[i];
+        navigatorItem.style.zIndex ='1'
 
         let parentProps = this.$refs.navigator.getBoundingClientRect()
         navigatorItem.style.left = parentProps.x + 15 + 'px';
@@ -110,6 +153,12 @@ export default {
         }
       }
       this.activated = !this.activated
+
+      if (!this.activated) {
+        for (let elem of this.activeItems) {
+          elem.style.zIndex = '-1'
+        }
+      }
     }
   },
 }

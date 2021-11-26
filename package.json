@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.15.1",
+    "interactjs": "^1.10.11",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
