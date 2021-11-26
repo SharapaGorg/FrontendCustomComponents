@@ -1,6 +1,6 @@
 <template>
   <center>
-    <br><br>
+    <br><br><br><br><br>
     <div>
         <DynamicNavigator/>
     </div>

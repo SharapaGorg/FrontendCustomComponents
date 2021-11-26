@@ -11,7 +11,10 @@
   "dependencies": {
     "core-js": "^3.15.1",
     "interactjs": "^1.10.11",
-    "nuxt": "^2.15.7"
+    "ionicons": "^6.0.0",
+    "nuxt": "^2.15.7",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",

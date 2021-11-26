@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  ssr : false,
   head: {
     title: 'CustomComponents',
     htmlAttrs: {
@@ -18,6 +19,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    // 'css.gg'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
