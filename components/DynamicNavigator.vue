@@ -1,5 +1,5 @@
 <template>
-  <div ref='container' class='container'>
+  <div ref='container' class='container mx-auto'>
     <div class='navigator' ref='navigator'>
       <img src = '../static/home.svg' class = 'navigator-icon mx-auto'/>
     </div>
