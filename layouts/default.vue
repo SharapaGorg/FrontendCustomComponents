@@ -19,6 +19,10 @@ export default {
         {
           title : 'Start button',
           route: 'StartButtonRoute'
+        },
+        {
+          title : 'Submit button',
+          route : 'SubmitButtonRoute'
         }
       ]
     }

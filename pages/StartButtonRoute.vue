@@ -1,5 +1,8 @@
 <template>
-  <start-button/>
+  <div>
+    <div class="status">DEV</div>
+    <start-button/>
+  </div>
 </template>
 
 <script>

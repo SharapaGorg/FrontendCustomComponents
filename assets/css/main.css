@@ -1,12 +1,23 @@
 .navigator-item {
   height: 50px;
   width: 50px;
-  background-color: #50c878;
+  /*background-color: #50c878;*/
+  background-color: #EE5180;
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 3px 2px #574D4D;
   position : absolute;
   transition : all .3s linear;
   z-index : -1;
   cursor: pointer;
+}
+
+.status {
+  padding : 5px;
+  background : #EEF0F4;
+  color : #403939;
+  width : fit-content;
+  border-radius: 7px;
+  margin-left : 20px;
+  margin-top : 20px;
+  @apply font-bold;
 }

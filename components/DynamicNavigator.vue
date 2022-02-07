@@ -1,5 +1,5 @@
 <template>
-  <div ref='container' class='container mx-auto'>
+  <div ref='container' class='container mx-auto' style="margin-top : 35vh">
     <div class='navigator' ref='navigator'>
       <img src = '../static/home.svg' class = 'navigator-icon mx-auto'/>
     </div>
@@ -166,6 +166,7 @@ export default {
         navigatorItem.style.background = background
         navigatorItem.style.zIndex ='1'
         navigatorItem.style.transition = 'all .3s linear'
+        navigatorItem.style.boxShadow = '0 3px 2px #574D4D';
 
         let parentProps = this.$refs.navigator.getBoundingClientRect()
         if (previousRects !== parentProps && !this.activated) {
@@ -185,6 +186,7 @@ export default {
       if (!this.activated) {
         for (let elem of this.activeItems) {
           elem.style.zIndex = '-1'
+          elem.style.boxShadow = ''
           // elem.style.transition = 'all 0s linear'
           // let parentProps = this.$refs.navigator.getBoundingClientRect()
           //

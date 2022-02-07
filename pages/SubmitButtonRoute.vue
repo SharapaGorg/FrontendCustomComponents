@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="status">DEV</div>
-    <dynamic-navigator/>
+    <submit-button/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "DynamicNavigatorRoute"
+  name: "SubmitButtonRoute"
 }
 </script>
 

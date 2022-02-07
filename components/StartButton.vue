@@ -38,8 +38,9 @@ export default {
   background : #1243e7;
   color: #EEF0F4;
   border-radius: 15px;
+  top : 45%;
   font-family: 'Supermercado One', cursive;
-  @apply px-6 py-1 cursor-pointer;
+  @apply px-6 py-1 cursor-pointer absolute;
 }
 
 .green__container {
