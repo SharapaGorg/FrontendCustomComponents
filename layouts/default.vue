@@ -1,15 +1,9 @@
 <template>
   <div>
-    <nav class='navbar'>
-    </nav>
-
-    <div class='content'>
-      <nuxt/>
+    <side-bar :positions="positions" class="float-left"/>
+    <div class="float-left" style="width : calc(100vw - 300px)">
+      <nuxt style="margin-top : 45vh" class="mx-auto"/>
     </div>
-
-    <br><br><br>
-    <footer class='avia-footer'>
-    </footer>
   </div>
 </template>
 
@@ -17,14 +11,21 @@
 export default {
   data() {
     return {
-      burgerShow: false
+      positions: [
+        {
+          title: 'Dynamic navigator',
+          route: 'DynamicNavigatorRoute'
+        },
+        {
+          title : 'Start button',
+          route: 'StartButtonRoute'
+        }
+      ]
     }
   },
 }
 </script>
 
-<style src = './default.css'>
-</style>
 
 <style>
 body, html {

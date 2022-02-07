@@ -1,10 +1,10 @@
 <template>
-
+  <start-button/>
 </template>
 
 <script>
 export default {
-  name: "DynamicNavigatorItem"
+  name: "StartButtonRoute"
 }
 </script>
 
