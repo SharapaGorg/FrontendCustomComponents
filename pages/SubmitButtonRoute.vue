@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="status">DEV</div>
-    <submit-button/>
+    <div class="grid grid-cols-3 justify-items-center">
+      <submit-button click-animation="1" />
+      <submit-button click-animation="2" />
+    </div>
   </div>
 </template>
 

@@ -11,8 +11,13 @@ export default {
   name: "SubmitButton",
   data() {
     return {
-      buttonMessage : 'Submit me',
+      buttonMessage: 'Submit me',
+      defaultAnimationDuration: 500
     }
+  },
+  props: {
+    clickAnimation: String,
+    animationDuration: Number
   },
   methods: {
     submit() {
@@ -20,6 +25,10 @@ export default {
       this.buttonMessage = '. . .'
       let counter = 0
 
+      this['animation_' + this.clickAnimation](button, counter)
+
+    },
+    animation_1(button, counter) {
       let timer = setInterval(() => {
         let even = counter % 2 === 1
         counter++
@@ -36,8 +45,16 @@ export default {
 
           clearInterval(timer);
         }
-      }, 500)
+      }, this.animationDuration ? this.animationDuration : this.defaultAnimationDuration)
+    },
+    animation_2(button, counter) {
+      button.style.width = '77px'
 
+      setTimeout(() => {
+        button.style.width = '135px'
+        this.buttonMessage = 'Submit me'
+
+      }, (this.animationDuration ? this.animationDuration : this.defaultAnimationDuration) * 10)
     }
   }
 }
@@ -48,7 +65,7 @@ export default {
 .submit-button {
   background: #1243e7;
   color: #EEF0F4;
-  width: 135px;
+  width : 135px;
   transition: all .5s ease;
   margin-top: 40vh;
   @apply px-7 py-2 mx-auto cursor-pointer text-center;
