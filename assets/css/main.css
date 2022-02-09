@@ -21,3 +21,30 @@
   margin-top : 20px;
   @apply font-bold;
 }
+
+.submit-button {
+  background: #1243e7;
+  color: #EEF0F4;
+  width : 135px;
+  height : 40px;
+  transition: all .5s ease;
+  margin-top: 40px;
+  @apply px-7 py-2 mx-auto cursor-pointer text-center;
+}
+
+.submit-button:hover {
+  border-radius: 15px;
+}
+
+.trigger-button {
+  width : 124px;
+  height : 40px;
+  color: #403939;
+  margin-bottom : 150px;
+  border-radius: 5px;
+  transition : all .5s ease;
+  background: #EE5180;
+  box-shadow:  20px 20px 60px #ca456d,
+  -20px -20px 60px #ff5d93;
+  @apply px-5 py-2 mx-auto cursor-pointer text-center font-bold;
+}
