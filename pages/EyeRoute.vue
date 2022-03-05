@@ -20,7 +20,7 @@
           Next
         </div>
       </div>
-      <div class="text-center width-fit text-[18px] mx-auto hover:underline">Forgot your password?</div>
+      <div class="text-center text-[18px] mx-auto hover:underline">Forgot your password?</div>
     </div>
   </div>
 </template>
@@ -77,12 +77,13 @@ export default {
 }
 
 .field-button {
-  /*background : #0505dc;*/
-  @apply w-[80px] h-[30px] rounded-md bg-[#0505dc] text-center text-[19px] mt-2 float-right mr-[45px] cursor-pointer;
+  /*bg-[#0505dc]*/
+  background : #5c5cef;
+  @apply w-[80px] h-[30px] rounded-sm  text-center text-[19px] mt-2 float-right mr-[45px] cursor-pointer bg-[#5c5cef];
 }
 
 .field-button-back {
-  @apply w-[80px] h-[30px] bg-transparent/20 rounded-md backdrop-filter backdrop-blur-lg text-center text-[19px] float-left mt-2 ml-[45px] cursor-pointer;
+  @apply w-[80px] h-[30px] bg-transparent/10 rounded-sm backdrop-filter backdrop-blur-lg text-center text-[19px] float-left mt-2 ml-[45px] cursor-pointer;
 }
 
 .field-title {
