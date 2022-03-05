@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="status">DEV</div>
-    <div class="trigger-button" @click="triggerAll" ref="activateButton">{{ message }}</div>
+    <div class="trigger-button" ref="activateButton" @click="triggerAll">{{ message }}</div>
     <div class="grid grid-cols-3 justify-items-center">
       <submit-button/>
       <submit-button1/>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
   name: "SubmitButtonRoute",
   data() {

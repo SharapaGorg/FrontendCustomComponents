@@ -23,6 +23,10 @@ export default {
         {
           title : 'Submit button',
           route : 'SubmitButtonRoute'
+        },
+        {
+          title: 'Eye',
+          route : 'EyeRoute'
         }
       ]
     }
@@ -33,6 +37,6 @@ export default {
 
 <style>
 body, html {
-  background-color: #EE5180;
+  background-color: #7086c2;
 }
 </style>
