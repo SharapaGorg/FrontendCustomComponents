@@ -27,6 +27,10 @@ export default {
         {
           title: 'Form',
           route : 'FormRoute'
+        },
+        {
+          title : 'Clock',
+          route : 'ClockRoute'
         }
       ]
     }
