@@ -25,8 +25,8 @@ export default {
           route : 'SubmitButtonRoute'
         },
         {
-          title: 'Eye',
-          route : 'EyeRoute'
+          title: 'Form',
+          route : 'FormRoute'
         }
       ]
     }
