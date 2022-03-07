@@ -13,24 +13,16 @@ export default {
     return {
       positions: [
         {
-          title: 'Dynamic navigator',
-          route: 'DynamicNavigatorRoute'
-        },
-        {
-          title : 'Start button',
-          route: 'StartButtonRoute'
-        },
-        {
-          title : 'Submit button',
-          route : 'SubmitButtonRoute'
-        },
-        {
           title: 'Form',
           route : 'FormRoute'
         },
         {
           title : 'Clock',
           route : 'ClockRoute'
+        },
+        {
+          title : 'Track',
+          route: 'TrackRoute'
         }
       ]
     }
